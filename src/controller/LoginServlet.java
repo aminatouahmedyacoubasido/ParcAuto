@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
         login = new Login();
     }
 	
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     	
 		
 	}
@@ -39,11 +39,7 @@ public class LoginServlet extends HttpServlet {
     	        loginB.setUsername(username);
     	        loginB.setPwd(password);
 
-    	        try {	/*DonneeLogin.validate(loginB) : impossible de faire ça car validate n’est pas
-    	        		une méthode, par consequent elle ne peut être appelé que par l’instance d’un objet
-    	        		voir le mot static : https://www.javatpoint.com/static-keyword-in-java
-    	        		les méthodes static: https://www.javatpoint.com/java-8-method-reference
-    	        */
+    	        try {
     	            if (DonneeLogin.validate(loginB)) {
     	                //HttpSession session = request.getSession();
     	                // session.setAttribute("username",username);

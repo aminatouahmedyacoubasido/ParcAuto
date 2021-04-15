@@ -16,8 +16,8 @@ public class DonneeLogin {
 	
 	
 	
-	
-	public  boolean validate(Login login) throws ClassNotFoundException {
+
+	public static boolean validate(Login login) throws ClassNotFoundException {
         boolean status = false;
 
         Class.forName("com.mysql.jdbc.Driver");
@@ -32,7 +32,6 @@ public class DonneeLogin {
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             status = rs.next();
-
         } catch (SQLException e) {
             // process sql exception
             printSQLException(e);
